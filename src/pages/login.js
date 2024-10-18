@@ -11,7 +11,7 @@ const Login = () => {
         event.preventDefault(); // Impede o comportamento padrão do formulário (recarregar a página)
         try {
             // Envia uma requisição POST para a API com o código de identificação
-            const response = await axios.post('https://feira3-production.up.railway.app//usuarios/login', { cod: codigo });
+            const response = await axios.post('https://localhost:5000/usuarios/login', { cod: codigo });
             const userId = response.data; // Recebe o ID do usuário da resposta
             localStorage.setItem("userId", userId); // Armazena o ID do usuário no localStorage
             navigate("/inicio"); // Redireciona o usuário para a página inicial

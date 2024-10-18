@@ -3,7 +3,7 @@ const cors = require('cors'); // Importa o middleware cors
 const routes = require('../api/routes/index.js'); // Importa as rotas da aplicação
 
 const app = express(); // Cria uma instância do Express
-const port = 'https://feira3-production.up.railway.app'; // Define a porta do servidor
+const port = 5000; // Define a porta do servidor
 
 // Configura o middleware CORS
 app.use(cors({

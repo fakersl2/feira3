@@ -14,12 +14,12 @@ function ModalAdicionar({ isOpen, toggleModal }) {
   // useEffect para buscar categorias e turmas ao montar o componente
   useEffect(() => {
     // Fetch categorias
-    axios.get('https://feira3-production.up.railway.app//categorias')
+    axios.get('https://localhost:5000/categorias')
       .then(response => setCategorias(response.data)) // Armazena categorias na lista
       .catch(error => console.error('Erro ao buscar disciplinas/categorias:', error)); // Log de erro
 
     // Fetch turmas
-    axios.get('https://feira3-production.up.railway.app//turmas')
+    axios.get('https://localhost:5000/turmas')
       .then(response => setTurmas(response.data)) // Armazena turmas na lista
       .catch(error => console.error('Erro ao buscar turmas:', error)); // Log de erro
   }, []); // Array vazio como dependência para executar apenas uma vez
@@ -34,7 +34,7 @@ function ModalAdicionar({ isOpen, toggleModal }) {
       turma: turma,
     };
 
-    axios.post('https://feira3-production.up.railway.app//projetos', projeto) // Envia dados do projeto para a API
+    axios.post('https://localhost:5000/projetos', projeto) // Envia dados do projeto para a API
       .then(response => {
         console.log('Projeto salvo com sucesso:', response.data); // Log de sucesso
         setNomeProjeto(''); // Limpa o campo de nome do projeto

@@ -12,7 +12,7 @@ const Cadastro = () => {
         const senha = event.target.password.value;
 
         try {
-            const response = await axios.post('https://feira3-production.up.railway.app//usuarios', {
+            const response = await axios.post('https://localhost:5000/usuarios', {
                 nome,
                 senha
             });

@@ -12,7 +12,7 @@ const Avaliacoes = () => {
         // Função para buscar votos e comentários
         const fetchVotos = async () => {
             try {
-                const response = await axios.get(`https://feira3-production.up.railway.app//votos/${id}`); // Faz requisição para buscar votos
+                const response = await axios.get(`https://localhost:5000/votos/${id}`); // Faz requisição para buscar votos
                 const avaliacoes = response.data; // Obtém dados da resposta
                 const positivos = avaliacoes.filter(avaliacao => avaliacao.nota === 'bom').length; // Conta votos positivos
                 const neutros = avaliacoes.filter(avaliacao => avaliacao.nota === 'médio').length; // Conta votos neutros

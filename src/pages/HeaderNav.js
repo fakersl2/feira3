@@ -15,7 +15,7 @@ const HeaderNav = () => {
       }
 
       try {
-        const response = await fetch(`https://feira3-production.up.railway.app//usuarios/${userId}`); // Requisição para buscar os dados do usuário
+        const response = await fetch(`https://localhost:5000/usuarios/${userId}`); // Requisição para buscar os dados do usuário
         const data = await response.json();
         setUserName(data.senha); // Assume que "senha" é o nome do usuário
       } catch (error) {
