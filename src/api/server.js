@@ -7,7 +7,7 @@ const port = 5000; // Define a porta do servidor
 
 // Configura o middleware CORS
 app.use(cors({
-    origin: 'https://feira3-production.up.railway.app/' // Permite apenas requisições da origem especificada
+    origin: 'https://feira3-production.up.railway.app' // Permite apenas requisições da origem especificada
 }));
 
 app.use(express.json()); // Middleware para fazer o parsing de JSON no corpo das requisições
