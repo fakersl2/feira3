@@ -12,7 +12,7 @@ function Modal({ isOpen, toggleModal, projectId }) {
   // useEffect para buscar o nome do projeto quando o modal é aberto
   useEffect(() => {
     if (isOpen) {
-      axios.get(`https://feira3-production.up.railway.app/projetos/${projectId}`)
+      axios.get(`https://feira3-production.up.railway.app//projetos/${projectId}`)
         .then(response => {
           setProjectName(response.data.nome); // Armazena o nome do projeto
           console.log('Project Name:', response.data.nome); // Log para depuração
@@ -33,7 +33,7 @@ function Modal({ isOpen, toggleModal, projectId }) {
     };
 
     try {
-      const response = await axios.post(`https://feira3-production.up.railway.app/votos/${projectId}`, voto, {
+      const response = await axios.post(`https://feira3-production.up.railway.app//votos/${projectId}`, voto, {
         headers: {
           'Content-Type': 'application/json',
         },
