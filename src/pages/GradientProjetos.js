@@ -11,7 +11,7 @@ const GradientProjetos = () => {
     // Função para buscar os detalhes do projeto
     const fetchProjeto = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/projetos/${id}`); // Requisição para buscar o projeto
+        const response = await axios.get(`http://192.168.1.13:5000/projetos/${id}`); // Requisição para buscar o projeto
         setProjeto({
           nome: response.data.nome,
           descricao: response.data.descricao,

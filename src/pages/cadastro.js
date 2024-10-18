@@ -12,7 +12,7 @@ const Cadastro = () => {
         const senha = event.target.password.value;
 
         try {
-            const response = await axios.post('http://localhost:5000/usuarios', {
+            const response = await axios.post('http://192.168.1.13:5000/usuarios', {
                 nome,
                 senha
             });
