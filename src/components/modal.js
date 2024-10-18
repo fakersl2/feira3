@@ -12,7 +12,7 @@ function Modal({ isOpen, toggleModal, projectId }) {
   // useEffect para buscar o nome do projeto quando o modal é aberto
   useEffect(() => {
     if (isOpen) {
-      axios.get(`https://localhost:5000/projetos/${projectId}`)
+      axios.get(`http://localhost:5000/projetos/${projectId}`)
         .then(response => {
           setProjectName(response.data.nome); // Armazena o nome do projeto
           console.log('Project Name:', response.data.nome); // Log para depuração
@@ -33,7 +33,7 @@ function Modal({ isOpen, toggleModal, projectId }) {
     };
 
     try {
-      const response = await axios.post(`https://localhost:5000/votos/${projectId}`, voto, {
+      const response = await axios.post(`http://localhost:5000/votos/${projectId}`, voto, {
         headers: {
           'Content-Type': 'application/json',
         },

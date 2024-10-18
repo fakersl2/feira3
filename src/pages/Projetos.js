@@ -33,7 +33,7 @@ function Projetos({ listaProjetos }) { // Define o componente Projetos
     e.preventDefault();
     try {
       const response = await axios.get(
-        `https://localhost:5000/projetos/nome/${searchTerm}` // Faz uma requisição para buscar projetos
+        `http://localhost:5000/projetos/nome/${searchTerm}` // Faz uma requisição para buscar projetos
       );
       setProjetos(response.data); // Atualiza a lista de projetos
       if (searchTerm == " ") { // Se o termo de busca for espaço, recarrega a página
@@ -47,7 +47,7 @@ function Projetos({ listaProjetos }) { // Define o componente Projetos
   // useEffect para buscar turmas, categorias e projetos ao montar o componente
   useEffect(() => {
     axios
-      .get("https://localhost:5000/turmas") // Busca as turmas
+      .get("http://localhost:5000/turmas") // Busca as turmas
       .then((response) => {
         setTurmas(response.data); // Atualiza o estado com as turmas
       })
@@ -56,7 +56,7 @@ function Projetos({ listaProjetos }) { // Define o componente Projetos
       });
 
     axios
-      .get("https://localhost:5000/categorias") // Busca as categorias
+      .get("http://localhost:5000/categorias") // Busca as categorias
       .then((response) => {
         setCategorias(response.data); // Atualiza o estado com as categorias
       })
@@ -66,7 +66,7 @@ function Projetos({ listaProjetos }) { // Define o componente Projetos
 
     const fetchProjetos = async () => {
       try {
-        const response = await axios.get("https://localhost:5000/projetos"); // Busca todos os projetos
+        const response = await axios.get("http://localhost:5000/projetos"); // Busca todos os projetos
         const userId = localStorage.getItem("userId"); // Recupera o ID do usuário do localStorage
         console.log("UserID: ", userId);
         const projetosData = response.data;
